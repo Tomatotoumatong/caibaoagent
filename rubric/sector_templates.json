@@ -1,0 +1,80 @@
+{
+  "_note": "行业模板基线（冻结于 2026-11-26，在看到任何 Q3 电话会内容之前写定）。每个 GICS 行业 5 条“任何分析师都会问”的通用观察项，按通用重要性排序；基线取前 K 条（K = 该事件系统观察项数）。修改会改变模板哈希。",
+  "Information Technology": [
+    ["本季总营收是否达到或超过公司指引中值？", "revenue_demand"],
+    ["毛利率是否环比改善？", "gross_margin"],
+    ["下季度营收指引中值是否高于本季实际营收？", "revenue_demand"],
+    ["AI 相关需求是否继续推动增长？", "ai"],
+    ["渠道与自身库存是否处于健康水平？", "inventory_supply"]
+  ],
+  "Communication Services": [
+    ["本季总营收增速是否加快？", "revenue_demand"],
+    ["广告或订阅收入是否超出上季增速？", "segment_product"],
+    ["营业利润率是否同比提升？", "opex_operating_margin"],
+    ["全年资本开支计划是否上调？", "cash_flow_capex"],
+    ["用户数或单用户收入是否继续增长？", "volume_units"]
+  ],
+  "Consumer Discretionary": [
+    ["同店销售或总营收是否达到预期？", "revenue_demand"],
+    ["毛利率是否同比改善？", "gross_margin"],
+    ["消费者需求是否出现走弱迹象？", "macro_end_market"],
+    ["库存水平是否健康？", "inventory_supply"],
+    ["全年指引是否上调？", "eps_net_income"]
+  ],
+  "Consumer Staples": [
+    ["有机销售增速是否达到预期？", "revenue_demand"],
+    ["提价是否仍在贡献增长？", "pricing"],
+    ["销量是否恢复正增长？", "volume_units"],
+    ["毛利率是否受原材料成本压制？", "gross_margin"],
+    ["全年 EPS 指引是否维持？", "eps_net_income"]
+  ],
+  "Energy": [
+    ["产量是否达到指引？", "volume_units"],
+    ["全年资本开支是否维持或下调？", "cash_flow_capex"],
+    ["股东回报（回购与分红）是否加大？", "capital_return"],
+    ["实现价格是否高于上季？", "pricing"],
+    ["单位成本是否下降？", "opex_operating_margin"]
+  ],
+  "Financials": [
+    ["净利息收入或总营收是否超出预期？", "revenue_demand"],
+    ["信贷质量是否恶化、拨备是否增加？", "balance_sheet"],
+    ["费用是否得到控制？", "opex_operating_margin"],
+    ["回购与资本回报是否加大？", "capital_return"],
+    ["贷款与存款是否增长？", "volume_units"]
+  ],
+  "Health Care": [
+    ["本季总营收是否超出预期？", "revenue_demand"],
+    ["核心产品销售是否保持增长？", "segment_product"],
+    ["研发管线是否有关键进展？", "pipeline_launch"],
+    ["毛利率是否稳定？", "gross_margin"],
+    ["全年 EPS 指引是否上调？", "eps_net_income"]
+  ],
+  "Industrials": [
+    ["新订单与积压订单是否增长？", "backlog_bookings"],
+    ["本季营收是否达到预期？", "revenue_demand"],
+    ["营业利润率是否改善？", "opex_operating_margin"],
+    ["供应链约束是否缓解？", "inventory_supply"],
+    ["全年指引是否上调？", "eps_net_income"]
+  ],
+  "Materials": [
+    ["销量是否增长？", "volume_units"],
+    ["产品价格是否企稳？", "pricing"],
+    ["原材料与能源成本是否下降？", "cost_inputs_tariffs"],
+    ["终端市场需求是否改善？", "macro_end_market"],
+    ["资本开支计划是否调整？", "cash_flow_capex"]
+  ],
+  "Real Estate": [
+    ["出租率是否维持高位？", "volume_units"],
+    ["续租租金涨幅是否保持？", "pricing"],
+    ["FFO 是否达到指引？", "eps_net_income"],
+    ["融资成本与杠杆是否可控？", "balance_sheet"],
+    ["收购或处置计划是否推进？", "m_and_a"]
+  ],
+  "Utilities": [
+    ["EPS 是否达到全年指引区间？", "eps_net_income"],
+    ["资本开支计划是否上调？", "cash_flow_capex"],
+    ["费率案或监管进展是否顺利？", "regulation_legal"],
+    ["负荷需求（含数据中心）是否加速？", "revenue_demand"],
+    ["股权融资需求是否增加？", "balance_sheet"]
+  ]
+}

@@ -1,0 +1,2525 @@
+{
+ "meta": {
+  "name": "v5r05_abc",
+  "frozen_at": "2026-11-26T08:35:44+00:00",
+  "er_db": "/Users/chaiyixuan/Desktop/earnings_radar_loop/data_q3v5_r05/radar.sqlite",
+  "er_db_sha256": "7965f530d15b48d5d42ae2358b55668c2853c1bfb32676fd74d4d6fcb8a156b5",
+  "er_db_bytes": 114745344,
+  "qajudge_code": "674f15f789903b4b",
+  "materials": {
+   "rubric": "c0936330172ab8c4",
+   "templates": "9ee1ca1557b2421e",
+   "extract_prompt": "8e3d7d08f537e850",
+   "match_prompt": "66e6d130c71adae3"
+  },
+  "model": "deepseek-flash",
+  "match_run": null,
+  "transcripts_sha": null,
+  "n_transcripts": 0,
+  "value_included": false
+ },
+ "events": {
+  "ADI:2026-10": {
+   "symbol": "ADI",
+   "A": {
+    "computable": false,
+    "reason": "no R2 (10-Q/10-K not in yet)"
+   },
+   "B": {
+    "n_cards": 4,
+    "n_clean": 4,
+    "core_ok": 4,
+    "core_expected": 4,
+    "correctness": 1.0,
+    "coverage": 1.0,
+    "llm_calls_retried": 0,
+    "stages": {
+     "static": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "frozen": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 5,
+    "n_settled": 5,
+    "n_coded": 5,
+    "n_agree": 5,
+    "n_checkable": 5,
+    "n_watch": 5,
+    "coverage": 1.0,
+    "correctness": 1.0
+   }
+  },
+  "AMD:2026-09": {
+   "symbol": "AMD",
+   "A": {
+    "computable": true,
+    "fields": {
+     "revenue": {
+      "xbrl": 13377000000.0,
+      "extracted": 13377000000.0,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "eps_gaap": {
+      "xbrl": 1.46,
+      "extracted": 1.46,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "gross_margin_pct": {
+      "xbrl": 53.898482469911045,
+      "extracted": 53.8985,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "operating_margin_pct": {
+      "xbrl": 21.170666068625252,
+      "extracted": 21.1707,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     }
+    },
+    "n_available": 4,
+    "n_compared": 4,
+    "n_match": 4,
+    "n_triage": 0,
+    "mismatches": [],
+    "correctness": 1.0,
+    "coverage": 1.0
+   },
+   "B": {
+    "n_cards": 5,
+    "n_clean": 5,
+    "core_ok": 4,
+    "core_expected": 4,
+    "correctness": 1.0,
+    "coverage": 1.0,
+    "llm_calls_retried": 0,
+    "stages": {
+     "static": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "frozen": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R2": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 5,
+    "n_settled": 5,
+    "n_coded": 5,
+    "n_agree": 5,
+    "n_checkable": 5,
+    "n_watch": 5,
+    "coverage": 1.0,
+    "correctness": 1.0
+   }
+  },
+  "CDNS:2026-09": {
+   "symbol": "CDNS",
+   "A": {
+    "computable": true,
+    "fields": {
+     "revenue": {
+      "xbrl": 1633311000.0,
+      "extracted": 1633000000.0,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "eps_gaap": {
+      "xbrl": 1.05,
+      "extracted": null,
+      "available": true,
+      "compared": false,
+      "xbrl_approx": false
+     },
+     "gross_margin_pct": {
+      "xbrl": null,
+      "extracted": 85.6,
+      "available": false,
+      "compared": false,
+      "xbrl_approx": false
+     },
+     "operating_margin_pct": {
+      "xbrl": 26.248277272362703,
+      "extracted": null,
+      "available": true,
+      "compared": false,
+      "xbrl_approx": false
+     }
+    },
+    "n_available": 3,
+    "n_compared": 1,
+    "n_match": 1,
+    "n_triage": 0,
+    "mismatches": [],
+    "correctness": 1.0,
+    "coverage": 0.3333
+   },
+   "B": {
+    "n_cards": 5,
+    "n_clean": 5,
+    "core_ok": 4,
+    "core_expected": 4,
+    "correctness": 1.0,
+    "coverage": 1.0,
+    "llm_calls_retried": 2,
+    "stages": {
+     "static": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 1
+     },
+     "frozen": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 1
+     },
+     "R2": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 5,
+    "n_settled": 5,
+    "n_coded": 2,
+    "n_agree": 2,
+    "n_checkable": 3,
+    "n_watch": 5,
+    "coverage": 1.0,
+    "correctness": 1.0
+   }
+  },
+  "CRWD:2026-10": {
+   "symbol": "CRWD",
+   "A": {
+    "computable": true,
+    "fields": {
+     "revenue": {
+      "xbrl": 1583419000.0,
+      "extracted": 1583419000.0,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "eps_gaap": {
+      "xbrl": 0.02,
+      "extracted": 0.02,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "gross_margin_pct": {
+      "xbrl": 75.92140804171227,
+      "extracted": 75.9214,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "operating_margin_pct": {
+      "xbrl": -0.04774478517688622,
+      "extracted": -0.0477,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     }
+    },
+    "n_available": 4,
+    "n_compared": 4,
+    "n_match": 4,
+    "n_triage": 0,
+    "mismatches": [],
+    "correctness": 1.0,
+    "coverage": 1.0
+   },
+   "B": {
+    "n_cards": 5,
+    "n_clean": 5,
+    "core_ok": 4,
+    "core_expected": 4,
+    "correctness": 1.0,
+    "coverage": 1.0,
+    "llm_calls_retried": 1,
+    "stages": {
+     "static": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "frozen": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 1
+     },
+     "R2": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 6,
+    "n_settled": 6,
+    "n_coded": 6,
+    "n_agree": 6,
+    "n_checkable": 6,
+    "n_watch": 6,
+    "coverage": 1.0,
+    "correctness": 1.0
+   }
+  },
+  "DDOG:2026-09": {
+   "symbol": "DDOG",
+   "A": {
+    "computable": true,
+    "fields": {
+     "revenue": {
+      "xbrl": 1197090000.0,
+      "extracted": 1197090000.0,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "eps_gaap": {
+      "xbrl": 0.32,
+      "extracted": 0.32,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "gross_margin_pct": {
+      "xbrl": 80.18803932870544,
+      "extracted": 80.188,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "operating_margin_pct": {
+      "xbrl": 6.24063353632559,
+      "extracted": 6.2406,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     }
+    },
+    "n_available": 4,
+    "n_compared": 4,
+    "n_match": 4,
+    "n_triage": 0,
+    "mismatches": [],
+    "correctness": 1.0,
+    "coverage": 1.0
+   },
+   "B": {
+    "n_cards": 5,
+    "n_clean": 4,
+    "core_ok": 3,
+    "core_expected": 4,
+    "correctness": 0.8,
+    "coverage": 0.75,
+    "llm_calls_retried": 0,
+    "stages": {
+     "static": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "frozen": {
+      "status": "degraded",
+      "clean": false,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R2": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 6,
+    "n_settled": 6,
+    "n_coded": 5,
+    "n_agree": 5,
+    "n_checkable": 5,
+    "n_watch": 6,
+    "coverage": 1.0,
+    "correctness": 1.0
+   }
+  },
+  "FICO:2026-09": {
+   "symbol": "FICO",
+   "A": {
+    "computable": true,
+    "fields": {
+     "revenue": {
+      "xbrl": 657049000.0,
+      "extracted": 657049000.0,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "eps_gaap": {
+      "xbrl": 8.2,
+      "extracted": 8.12,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": true,
+      "match": true
+     },
+     "gross_margin_pct": {
+      "xbrl": null,
+      "extracted": null,
+      "available": false,
+      "compared": false,
+      "xbrl_approx": false
+     },
+     "operating_margin_pct": {
+      "xbrl": 40.56805504612289,
+      "extracted": 40.5681,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     }
+    },
+    "n_available": 3,
+    "n_compared": 3,
+    "n_match": 3,
+    "n_triage": 0,
+    "mismatches": [],
+    "correctness": 1.0,
+    "coverage": 1.0
+   },
+   "B": {
+    "n_cards": 5,
+    "n_clean": 4,
+    "core_ok": 3,
+    "core_expected": 4,
+    "correctness": 0.8,
+    "coverage": 0.75,
+    "llm_calls_retried": 0,
+    "stages": {
+     "static": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "frozen": {
+      "status": "degraded",
+      "clean": false,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R2": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 5,
+    "n_settled": 5,
+    "n_coded": 4,
+    "n_agree": 4,
+    "n_checkable": 4,
+    "n_watch": 5,
+    "coverage": 1.0,
+    "correctness": 1.0
+   }
+  },
+  "FSLR:2026-09": {
+   "symbol": "FSLR",
+   "A": {
+    "computable": true,
+    "fields": {
+     "revenue": {
+      "xbrl": 1230936000.0,
+      "extracted": 1230936000.0,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "eps_gaap": {
+      "xbrl": 5.3,
+      "extracted": 5.3,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "gross_margin_pct": {
+      "xbrl": 57.92827571864012,
+      "extracted": 57.9283,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "operating_margin_pct": {
+      "xbrl": 44.365263506794825,
+      "extracted": 44.3653,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     }
+    },
+    "n_available": 4,
+    "n_compared": 4,
+    "n_match": 4,
+    "n_triage": 0,
+    "mismatches": [],
+    "correctness": 1.0,
+    "coverage": 1.0
+   },
+   "B": {
+    "n_cards": 5,
+    "n_clean": 4,
+    "core_ok": 3,
+    "core_expected": 4,
+    "correctness": 0.8,
+    "coverage": 0.75,
+    "llm_calls_retried": 0,
+    "stages": {
+     "static": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "frozen": {
+      "status": "degraded",
+      "clean": false,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R2": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 5,
+    "n_settled": 5,
+    "n_coded": 4,
+    "n_agree": 4,
+    "n_checkable": 4,
+    "n_watch": 5,
+    "coverage": 1.0,
+    "correctness": 1.0
+   }
+  },
+  "FTNT:2026-09": {
+   "symbol": "FTNT",
+   "A": {
+    "computable": true,
+    "fields": {
+     "revenue": {
+      "xbrl": 2078400000.0,
+      "extracted": 2078400000.0,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "eps_gaap": {
+      "xbrl": 0.86,
+      "extracted": 0.86,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "gross_margin_pct": {
+      "xbrl": 78.95015396458814,
+      "extracted": 78.9502,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "operating_margin_pct": {
+      "xbrl": 33.886643571978446,
+      "extracted": 33.8866,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     }
+    },
+    "n_available": 4,
+    "n_compared": 4,
+    "n_match": 4,
+    "n_triage": 0,
+    "mismatches": [],
+    "correctness": 1.0,
+    "coverage": 1.0
+   },
+   "B": {
+    "n_cards": 5,
+    "n_clean": 5,
+    "core_ok": 4,
+    "core_expected": 4,
+    "correctness": 1.0,
+    "coverage": 1.0,
+    "llm_calls_retried": 0,
+    "stages": {
+     "static": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "frozen": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R2": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 5,
+    "n_settled": 5,
+    "n_coded": 5,
+    "n_agree": 5,
+    "n_checkable": 5,
+    "n_watch": 5,
+    "coverage": 1.0,
+    "correctness": 1.0
+   }
+  },
+  "GEN:2026-10": {
+   "symbol": "GEN",
+   "A": {
+    "computable": true,
+    "fields": {
+     "revenue": {
+      "xbrl": 1369000000.0,
+      "extracted": 1369000000.0,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "eps_gaap": {
+      "xbrl": 0.48,
+      "extracted": 0.48,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "gross_margin_pct": {
+      "xbrl": 75.89481373265157,
+      "extracted": 75.8948,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "operating_margin_pct": {
+      "xbrl": 37.034331628926225,
+      "extracted": 37.0343,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     }
+    },
+    "n_available": 4,
+    "n_compared": 4,
+    "n_match": 4,
+    "n_triage": 0,
+    "mismatches": [],
+    "correctness": 1.0,
+    "coverage": 1.0
+   },
+   "B": {
+    "n_cards": 5,
+    "n_clean": 5,
+    "core_ok": 4,
+    "core_expected": 4,
+    "correctness": 1.0,
+    "coverage": 1.0,
+    "llm_calls_retried": 0,
+    "stages": {
+     "static": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "frozen": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R2": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 5,
+    "n_settled": 5,
+    "n_coded": 5,
+    "n_agree": 5,
+    "n_checkable": 5,
+    "n_watch": 5,
+    "coverage": 1.0,
+    "correctness": 1.0
+   }
+  },
+  "INTC:2026-09": {
+   "symbol": "INTC",
+   "A": {
+    "computable": true,
+    "fields": {
+     "revenue": {
+      "xbrl": 16513000000.0,
+      "extracted": 16513000000.0,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "eps_gaap": {
+      "xbrl": 0.6,
+      "extracted": 0.6,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "gross_margin_pct": {
+      "xbrl": 42.972203718282564,
+      "extracted": 42.9722,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "operating_margin_pct": {
+      "xbrl": 15.272815357597045,
+      "extracted": 15.2728,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     }
+    },
+    "n_available": 4,
+    "n_compared": 4,
+    "n_match": 4,
+    "n_triage": 0,
+    "mismatches": [],
+    "correctness": 1.0,
+    "coverage": 1.0
+   },
+   "B": {
+    "n_cards": 5,
+    "n_clean": 5,
+    "core_ok": 4,
+    "core_expected": 4,
+    "correctness": 1.0,
+    "coverage": 1.0,
+    "llm_calls_retried": 0,
+    "stages": {
+     "static": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "frozen": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R2": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 5,
+    "n_settled": 5,
+    "n_coded": 5,
+    "n_agree": 5,
+    "n_checkable": 5,
+    "n_watch": 5,
+    "coverage": 1.0,
+    "correctness": 1.0
+   }
+  },
+  "INTU:2026-10": {
+   "symbol": "INTU",
+   "A": {
+    "computable": true,
+    "fields": {
+     "revenue": {
+      "xbrl": 4354000000.0,
+      "extracted": 4354000000.0,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "eps_gaap": {
+      "xbrl": 2.59,
+      "extracted": 2.59,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "gross_margin_pct": {
+      "xbrl": null,
+      "extracted": null,
+      "available": false,
+      "compared": false,
+      "xbrl_approx": false
+     },
+     "operating_margin_pct": {
+      "xbrl": 19.935691318327976,
+      "extracted": 19.9357,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     }
+    },
+    "n_available": 3,
+    "n_compared": 3,
+    "n_match": 3,
+    "n_triage": 0,
+    "mismatches": [],
+    "correctness": 1.0,
+    "coverage": 1.0
+   },
+   "B": {
+    "n_cards": 5,
+    "n_clean": 5,
+    "core_ok": 4,
+    "core_expected": 4,
+    "correctness": 1.0,
+    "coverage": 1.0,
+    "llm_calls_retried": 1,
+    "stages": {
+     "static": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "frozen": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R2": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 1
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 6,
+    "n_settled": 6,
+    "n_coded": 4,
+    "n_agree": 4,
+    "n_checkable": 4,
+    "n_watch": 6,
+    "coverage": 1.0,
+    "correctness": 1.0
+   }
+  },
+  "MCHP:2026-09": {
+   "symbol": "MCHP",
+   "A": {
+    "computable": true,
+    "fields": {
+     "revenue": {
+      "xbrl": 1621500000.0,
+      "extracted": 1621500000.0,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "eps_gaap": {
+      "xbrl": 0.68,
+      "extracted": 0.68,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "gross_margin_pct": {
+      "xbrl": 65.86493987049029,
+      "extracted": 65.8649,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "operating_margin_pct": {
+      "xbrl": 28.646315140302193,
+      "extracted": 28.6463,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     }
+    },
+    "n_available": 4,
+    "n_compared": 4,
+    "n_match": 4,
+    "n_triage": 0,
+    "mismatches": [],
+    "correctness": 1.0,
+    "coverage": 1.0
+   },
+   "B": {
+    "n_cards": 5,
+    "n_clean": 4,
+    "core_ok": 3,
+    "core_expected": 4,
+    "correctness": 0.8,
+    "coverage": 0.75,
+    "llm_calls_retried": 0,
+    "stages": {
+     "static": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "frozen": {
+      "status": "degraded",
+      "clean": false,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R2": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 6,
+    "n_settled": 6,
+    "n_coded": 5,
+    "n_agree": 5,
+    "n_checkable": 5,
+    "n_watch": 6,
+    "coverage": 1.0,
+    "correctness": 1.0
+   }
+  },
+  "MPWR:2026-09": {
+   "symbol": "MPWR",
+   "A": {
+    "computable": true,
+    "fields": {
+     "revenue": {
+      "xbrl": 1202409000.0,
+      "extracted": 1202400000.0,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "eps_gaap": {
+      "xbrl": 5.51,
+      "extracted": 5.51,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "gross_margin_pct": {
+      "xbrl": 55.35046727028823,
+      "extracted": 55.4,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "operating_margin_pct": {
+      "xbrl": 29.747531829851575,
+      "extracted": 29.7488,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     }
+    },
+    "n_available": 4,
+    "n_compared": 4,
+    "n_match": 4,
+    "n_triage": 0,
+    "mismatches": [],
+    "correctness": 1.0,
+    "coverage": 1.0
+   },
+   "B": {
+    "n_cards": 5,
+    "n_clean": 5,
+    "core_ok": 4,
+    "core_expected": 4,
+    "correctness": 1.0,
+    "coverage": 1.0,
+    "llm_calls_retried": 0,
+    "stages": {
+     "static": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "frozen": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R2": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 5,
+    "n_settled": 5,
+    "n_coded": 4,
+    "n_agree": 4,
+    "n_checkable": 4,
+    "n_watch": 5,
+    "coverage": 1.0,
+    "correctness": 1.0
+   }
+  },
+  "MSFT:2026-09": {
+   "symbol": "MSFT",
+   "A": {
+    "computable": true,
+    "fields": {
+     "revenue": {
+      "xbrl": 92279000000.0,
+      "extracted": 92279000000.0,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "eps_gaap": {
+      "xbrl": 4.92,
+      "extracted": 4.92,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "gross_margin_pct": {
+      "xbrl": 67.79332242438691,
+      "extracted": 67.7933,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "operating_margin_pct": {
+      "xbrl": 49.75671604590427,
+      "extracted": 49.7567,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     }
+    },
+    "n_available": 4,
+    "n_compared": 4,
+    "n_match": 4,
+    "n_triage": 0,
+    "mismatches": [],
+    "correctness": 1.0,
+    "coverage": 1.0
+   },
+   "B": {
+    "n_cards": 5,
+    "n_clean": 4,
+    "core_ok": 3,
+    "core_expected": 4,
+    "correctness": 0.8,
+    "coverage": 0.75,
+    "llm_calls_retried": 0,
+    "stages": {
+     "static": {
+      "status": "degraded",
+      "clean": false,
+      "llm_retried": 0
+     },
+     "frozen": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R2": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 5,
+    "n_settled": 5,
+    "n_coded": 4,
+    "n_agree": 4,
+    "n_checkable": 4,
+    "n_watch": 5,
+    "coverage": 1.0,
+    "correctness": 1.0
+   }
+  },
+  "NOW:2026-09": {
+   "symbol": "NOW",
+   "A": {
+    "computable": true,
+    "fields": {
+     "revenue": {
+      "xbrl": 4106000000.0,
+      "extracted": 4106000000.0,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "eps_gaap": {
+      "xbrl": 0.27,
+      "extracted": 0.27,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "gross_margin_pct": {
+      "xbrl": 70.50657574281539,
+      "extracted": 70.5066,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "operating_margin_pct": {
+      "xbrl": 9.376522162688747,
+      "extracted": 9.3765,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     }
+    },
+    "n_available": 4,
+    "n_compared": 4,
+    "n_match": 4,
+    "n_triage": 0,
+    "mismatches": [],
+    "correctness": 1.0,
+    "coverage": 1.0
+   },
+   "B": {
+    "n_cards": 5,
+    "n_clean": 5,
+    "core_ok": 4,
+    "core_expected": 4,
+    "correctness": 1.0,
+    "coverage": 1.0,
+    "llm_calls_retried": 0,
+    "stages": {
+     "static": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "frozen": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R2": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 5,
+    "n_settled": 5,
+    "n_coded": 5,
+    "n_agree": 5,
+    "n_checkable": 5,
+    "n_watch": 5,
+    "coverage": 1.0,
+    "correctness": 1.0
+   }
+  },
+  "NVDA:2026-10": {
+   "symbol": "NVDA",
+   "A": {
+    "computable": false,
+    "reason": "no R2 (10-Q/10-K not in yet)"
+   },
+   "B": {
+    "n_cards": 4,
+    "n_clean": 4,
+    "core_ok": 4,
+    "core_expected": 4,
+    "correctness": 1.0,
+    "coverage": 1.0,
+    "llm_calls_retried": 0,
+    "stages": {
+     "static": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "frozen": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 6,
+    "n_settled": 6,
+    "n_coded": 6,
+    "n_agree": 6,
+    "n_checkable": 6,
+    "n_watch": 6,
+    "coverage": 1.0,
+    "correctness": 1.0
+   }
+  },
+  "NXPI:2026-09": {
+   "symbol": "NXPI",
+   "A": {
+    "computable": true,
+    "fields": {
+     "revenue": {
+      "xbrl": 3786000000.0,
+      "extracted": 3786000000.0,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "eps_gaap": {
+      "xbrl": 3.48,
+      "extracted": 3.48,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "gross_margin_pct": {
+      "xbrl": 57.81827786582144,
+      "extracted": 57.8183,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "operating_margin_pct": {
+      "xbrl": 32.435287902799786,
+      "extracted": 32.4353,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     }
+    },
+    "n_available": 4,
+    "n_compared": 4,
+    "n_match": 4,
+    "n_triage": 0,
+    "mismatches": [],
+    "correctness": 1.0,
+    "coverage": 1.0
+   },
+   "B": {
+    "n_cards": 5,
+    "n_clean": 5,
+    "core_ok": 4,
+    "core_expected": 4,
+    "correctness": 1.0,
+    "coverage": 1.0,
+    "llm_calls_retried": 0,
+    "stages": {
+     "static": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "frozen": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R2": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 6,
+    "n_settled": 6,
+    "n_coded": 5,
+    "n_agree": 5,
+    "n_checkable": 5,
+    "n_watch": 6,
+    "coverage": 1.0,
+    "correctness": 1.0
+   }
+  },
+  "ON:2026-10": {
+   "symbol": "ON",
+   "A": {
+    "computable": true,
+    "fields": {
+     "revenue": {
+      "xbrl": 1722300000.0,
+      "extracted": 1722300000.0,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "eps_gaap": {
+      "xbrl": 0.79,
+      "extracted": 0.79,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "gross_margin_pct": {
+      "xbrl": 41.39813040701388,
+      "extracted": 41.3981,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "operating_margin_pct": {
+      "xbrl": 21.96481449224874,
+      "extracted": 21.9648,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     }
+    },
+    "n_available": 4,
+    "n_compared": 4,
+    "n_match": 4,
+    "n_triage": 0,
+    "mismatches": [],
+    "correctness": 1.0,
+    "coverage": 1.0
+   },
+   "B": {
+    "n_cards": 5,
+    "n_clean": 5,
+    "core_ok": 4,
+    "core_expected": 4,
+    "correctness": 1.0,
+    "coverage": 1.0,
+    "llm_calls_retried": 0,
+    "stages": {
+     "static": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "frozen": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R2": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 6,
+    "n_settled": 6,
+    "n_coded": 5,
+    "n_agree": 5,
+    "n_checkable": 5,
+    "n_watch": 6,
+    "coverage": 1.0,
+    "correctness": 1.0
+   }
+  },
+  "PANW:2026-10": {
+   "symbol": "PANW",
+   "A": {
+    "computable": true,
+    "fields": {
+     "revenue": {
+      "xbrl": 3445000000.0,
+      "extracted": 3445000000.0,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "eps_gaap": {
+      "xbrl": 0.57,
+      "extracted": 0.57,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "gross_margin_pct": {
+      "xbrl": 67.98258345428157,
+      "extracted": 67.9826,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "operating_margin_pct": {
+      "xbrl": 2.7866473149492017,
+      "extracted": 2.7866,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     }
+    },
+    "n_available": 4,
+    "n_compared": 4,
+    "n_match": 4,
+    "n_triage": 0,
+    "mismatches": [],
+    "correctness": 1.0,
+    "coverage": 1.0
+   },
+   "B": {
+    "n_cards": 5,
+    "n_clean": 5,
+    "core_ok": 4,
+    "core_expected": 4,
+    "correctness": 1.0,
+    "coverage": 1.0,
+    "llm_calls_retried": 0,
+    "stages": {
+     "static": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "frozen": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R2": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 5,
+    "n_settled": 5,
+    "n_coded": 5,
+    "n_agree": 5,
+    "n_checkable": 5,
+    "n_watch": 5,
+    "coverage": 1.0,
+    "correctness": 1.0
+   }
+  },
+  "PLTR:2026-09": {
+   "symbol": "PLTR",
+   "A": {
+    "computable": true,
+    "fields": {
+     "revenue": {
+      "xbrl": 2313411000.0,
+      "extracted": 2313411000.0,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "eps_gaap": {
+      "xbrl": 0.44,
+      "extracted": 0.44,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "gross_margin_pct": {
+      "xbrl": 83.43199716781842,
+      "extracted": 83.432,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "operating_margin_pct": {
+      "xbrl": 46.893742616422244,
+      "extracted": 46.8937,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     }
+    },
+    "n_available": 4,
+    "n_compared": 4,
+    "n_match": 4,
+    "n_triage": 0,
+    "mismatches": [],
+    "correctness": 1.0,
+    "coverage": 1.0
+   },
+   "B": {
+    "n_cards": 5,
+    "n_clean": 5,
+    "core_ok": 4,
+    "core_expected": 4,
+    "correctness": 1.0,
+    "coverage": 1.0,
+    "llm_calls_retried": 1,
+    "stages": {
+     "static": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "frozen": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 1
+     },
+     "R2": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 5,
+    "n_settled": 5,
+    "n_coded": 5,
+    "n_agree": 5,
+    "n_checkable": 5,
+    "n_watch": 5,
+    "coverage": 1.0,
+    "correctness": 1.0
+   }
+  },
+  "PTC:2026-09": {
+   "symbol": "PTC",
+   "A": {
+    "computable": true,
+    "fields": {
+     "revenue": {
+      "xbrl": 673254000.0,
+      "extracted": 673254000.0,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "eps_gaap": {
+      "xbrl": 1.5,
+      "extracted": 1.44,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": true,
+      "match": null
+     },
+     "gross_margin_pct": {
+      "xbrl": 82.79104171679633,
+      "extracted": 82.791,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "operating_margin_pct": {
+      "xbrl": 31.581394243480172,
+      "extracted": 31.5814,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     }
+    },
+    "n_available": 4,
+    "n_compared": 4,
+    "n_match": 3,
+    "n_triage": 1,
+    "mismatches": [
+     {
+      "field": "eps_gaap",
+      "extracted": 1.44,
+      "xbrl": 1.5,
+      "kind": "triage_approx_xbrl"
+     }
+    ],
+    "correctness": 1.0,
+    "coverage": 1.0
+   },
+   "B": {
+    "n_cards": 5,
+    "n_clean": 5,
+    "core_ok": 4,
+    "core_expected": 4,
+    "correctness": 1.0,
+    "coverage": 1.0,
+    "llm_calls_retried": 0,
+    "stages": {
+     "static": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "frozen": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R2": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 6,
+    "n_settled": 5,
+    "n_coded": 4,
+    "n_agree": 4,
+    "n_checkable": 4,
+    "n_watch": 6,
+    "coverage": 0.8333,
+    "correctness": 1.0
+   }
+  },
+  "QCOM:2026-09": {
+   "symbol": "QCOM",
+   "A": {
+    "computable": true,
+    "fields": {
+     "revenue": {
+      "xbrl": 10322000000.0,
+      "extracted": 10322000000.0,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "eps_gaap": {
+      "xbrl": 1.17,
+      "extracted": 1.17,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": true,
+      "match": true
+     },
+     "gross_margin_pct": {
+      "xbrl": null,
+      "extracted": null,
+      "available": false,
+      "compared": false,
+      "xbrl_approx": false
+     },
+     "operating_margin_pct": {
+      "xbrl": 13.136988955628754,
+      "extracted": 13.137,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     }
+    },
+    "n_available": 3,
+    "n_compared": 3,
+    "n_match": 3,
+    "n_triage": 0,
+    "mismatches": [],
+    "correctness": 1.0,
+    "coverage": 1.0
+   },
+   "B": {
+    "n_cards": 5,
+    "n_clean": 5,
+    "core_ok": 4,
+    "core_expected": 4,
+    "correctness": 1.0,
+    "coverage": 1.0,
+    "llm_calls_retried": 1,
+    "stages": {
+     "static": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "frozen": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 1
+     },
+     "R2": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 6,
+    "n_settled": 5,
+    "n_coded": 4,
+    "n_agree": 4,
+    "n_checkable": 5,
+    "n_watch": 6,
+    "coverage": 0.8333,
+    "correctness": 1.0
+   }
+  },
+  "SWKS:2026-10": {
+   "symbol": "SWKS",
+   "A": {
+    "computable": true,
+    "fields": {
+     "revenue": {
+      "xbrl": 1045700000.0,
+      "extracted": 1045700000.0,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "eps_gaap": {
+      "xbrl": 0.1499999999999999,
+      "extracted": 0.15,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": true,
+      "match": true
+     },
+     "gross_margin_pct": {
+      "xbrl": 40.862580089891935,
+      "extracted": 40.8721,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "operating_margin_pct": {
+      "xbrl": 2.1325427943004684,
+      "extracted": 2.1325,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     }
+    },
+    "n_available": 4,
+    "n_compared": 4,
+    "n_match": 4,
+    "n_triage": 0,
+    "mismatches": [],
+    "correctness": 1.0,
+    "coverage": 1.0
+   },
+   "B": {
+    "n_cards": 5,
+    "n_clean": 5,
+    "core_ok": 4,
+    "core_expected": 4,
+    "correctness": 1.0,
+    "coverage": 1.0,
+    "llm_calls_retried": 0,
+    "stages": {
+     "static": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "frozen": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R2": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 6,
+    "n_settled": 5,
+    "n_coded": 5,
+    "n_agree": 5,
+    "n_checkable": 5,
+    "n_watch": 6,
+    "coverage": 0.8333,
+    "correctness": 1.0
+   }
+  },
+  "TRMB:2026-10": {
+   "symbol": "TRMB",
+   "A": {
+    "computable": true,
+    "fields": {
+     "revenue": {
+      "xbrl": 966800000.0,
+      "extracted": 966800000.0,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "eps_gaap": {
+      "xbrl": 0.25,
+      "extracted": 0.25,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "gross_margin_pct": {
+      "xbrl": 68.17335539925527,
+      "extracted": 68.1734,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "operating_margin_pct": {
+      "xbrl": 14.687629292511378,
+      "extracted": 14.6876,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     }
+    },
+    "n_available": 4,
+    "n_compared": 4,
+    "n_match": 4,
+    "n_triage": 0,
+    "mismatches": [],
+    "correctness": 1.0,
+    "coverage": 1.0
+   },
+   "B": {
+    "n_cards": 5,
+    "n_clean": 5,
+    "core_ok": 4,
+    "core_expected": 4,
+    "correctness": 1.0,
+    "coverage": 1.0,
+    "llm_calls_retried": 0,
+    "stages": {
+     "static": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "frozen": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R2": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 6,
+    "n_settled": 6,
+    "n_coded": 5,
+    "n_agree": 5,
+    "n_checkable": 5,
+    "n_watch": 6,
+    "coverage": 1.0,
+    "correctness": 1.0
+   }
+  },
+  "TWLO:2026-09": {
+   "symbol": "TWLO",
+   "A": {
+    "computable": true,
+    "fields": {
+     "revenue": {
+      "xbrl": 1559536000.0,
+      "extracted": 1559536000.0,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "eps_gaap": {
+      "xbrl": 1.0,
+      "extracted": 1.0,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "gross_margin_pct": {
+      "xbrl": 48.76642796318905,
+      "extracted": 48.7664,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "operating_margin_pct": {
+      "xbrl": 9.530398785279724,
+      "extracted": 9.5304,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     }
+    },
+    "n_available": 4,
+    "n_compared": 4,
+    "n_match": 4,
+    "n_triage": 0,
+    "mismatches": [],
+    "correctness": 1.0,
+    "coverage": 1.0
+   },
+   "B": {
+    "n_cards": 5,
+    "n_clean": 5,
+    "core_ok": 4,
+    "core_expected": 4,
+    "correctness": 1.0,
+    "coverage": 1.0,
+    "llm_calls_retried": 0,
+    "stages": {
+     "static": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "frozen": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R2": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 6,
+    "n_settled": 6,
+    "n_coded": 6,
+    "n_agree": 5,
+    "n_checkable": 6,
+    "n_watch": 6,
+    "coverage": 1.0,
+    "correctness": 0.8333
+   }
+  },
+  "TXN:2026-09": {
+   "symbol": "TXN",
+   "A": {
+    "computable": true,
+    "fields": {
+     "revenue": {
+      "xbrl": 6055000000.0,
+      "extracted": 6055000000.0,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "eps_gaap": {
+      "xbrl": 2.62,
+      "extracted": 2.62,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "gross_margin_pct": {
+      "xbrl": 64.19488026424443,
+      "extracted": 64.1949,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "operating_margin_pct": {
+      "xbrl": 47.46490503715937,
+      "extracted": 47.4649,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     }
+    },
+    "n_available": 4,
+    "n_compared": 4,
+    "n_match": 4,
+    "n_triage": 0,
+    "mismatches": [],
+    "correctness": 1.0,
+    "coverage": 1.0
+   },
+   "B": {
+    "n_cards": 5,
+    "n_clean": 5,
+    "core_ok": 4,
+    "core_expected": 4,
+    "correctness": 1.0,
+    "coverage": 1.0,
+    "llm_calls_retried": 1,
+    "stages": {
+     "static": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "frozen": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R2": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 1
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 6,
+    "n_settled": 6,
+    "n_coded": 5,
+    "n_agree": 5,
+    "n_checkable": 5,
+    "n_watch": 6,
+    "coverage": 1.0,
+    "correctness": 1.0
+   }
+  },
+  "TYL:2026-09": {
+   "symbol": "TYL",
+   "A": {
+    "computable": true,
+    "fields": {
+     "revenue": {
+      "xbrl": 647566000.0,
+      "extracted": 647566000.0,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "eps_gaap": {
+      "xbrl": 2.33,
+      "extracted": 2.33,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "gross_margin_pct": {
+      "xbrl": 49.13923831702097,
+      "extracted": 49.1392,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     },
+     "operating_margin_pct": {
+      "xbrl": 18.07337012752368,
+      "extracted": 18.0734,
+      "available": true,
+      "compared": true,
+      "xbrl_approx": false,
+      "match": true
+     }
+    },
+    "n_available": 4,
+    "n_compared": 4,
+    "n_match": 4,
+    "n_triage": 0,
+    "mismatches": [],
+    "correctness": 1.0,
+    "coverage": 1.0
+   },
+   "B": {
+    "n_cards": 5,
+    "n_clean": 4,
+    "core_ok": 3,
+    "core_expected": 4,
+    "correctness": 0.8,
+    "coverage": 0.75,
+    "llm_calls_retried": 0,
+    "stages": {
+     "static": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "frozen": {
+      "status": "degraded",
+      "clean": false,
+      "llm_retried": 0
+     },
+     "R0": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "R2": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     },
+     "reflection": {
+      "status": "ok",
+      "clean": true,
+      "llm_retried": 0
+     }
+    }
+   },
+   "C": {
+    "computable": true,
+    "n_items": 5,
+    "n_settled": 5,
+    "n_coded": 4,
+    "n_agree": 4,
+    "n_checkable": 4,
+    "n_watch": 5,
+    "coverage": 1.0,
+    "correctness": 1.0
+   }
+  }
+ },
+ "summary": {
+  "n_events": 27,
+  "A_extraction_vs_xbrl": {
+   "correctness": 1.0,
+   "coverage": 0.9792,
+   "triage": 1,
+   "events": 25,
+   "events_not_computable": 2,
+   "by_field": {
+    "revenue": {
+     "correctness": 1.0,
+     "coverage": 1.0,
+     "match/compared/available/triage": "25/25/25/0"
+    },
+    "eps_gaap": {
+     "correctness": 1.0,
+     "coverage": 0.96,
+     "match/compared/available/triage": "23/24/25/1"
+    },
+    "gross_margin_pct": {
+     "correctness": 1.0,
+     "coverage": 1.0,
+     "match/compared/available/triage": "21/21/21/0"
+    },
+    "operating_margin_pct": {
+     "correctness": 1.0,
+     "coverage": 0.96,
+     "match/compared/available/triage": "24/24/25/0"
+    }
+   },
+   "mismatches": {
+    "PTC:2026-09": [
+     {
+      "field": "eps_gaap",
+      "extracted": 1.44,
+      "xbrl": 1.5,
+      "kind": "triage_approx_xbrl"
+     }
+    ]
+   }
+  },
+  "B_discipline": {
+   "correctness": 0.9549,
+   "coverage": 0.9444,
+   "llm_calls_retried": 7
+  },
+  "C_watch_settling": {
+   "correctness": 0.9921,
+   "coverage": 0.9797,
+   "checkable_share": 0.8716
+  }
+ },
+ "idf": {}
+}

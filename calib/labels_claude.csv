@@ -1,0 +1,51 @@
+﻿pair_id,label,note
+P001,1,EDA/agentic AI segment growth vs total revenue (B3)
+P002,0,AI adoption curve; not the revenue quantity (B4)
+P003,1,market unspecified in quote; read as handset market health -> driver (low confidence)
+P004,2,long-term total revenue growth model (B1)
+P005,2,asks puts & takes of gross margin itself
+P006,1,which end markets outperform overall outlook (B3)
+P007,2,2030 total revenue target (B1)
+P008,0,
+P009,0,pricing not named in why; different quantity
+P010,2,next-year demand/growth vs this quarter revenue (B1)
+P011,2,combined-entity revenue growth (B1)
+P012,2,margins incl. gross margin leverage this quarter
+P013,2,
+P014,2,growth deceleration across metrics in 3Q incl. revenue (borderline 1/2)
+P015,2,path to 50-55% gross margin (B1)
+P016,0,gross margin vs EPS: different quantity; GM not in why
+P017,0,
+P018,1,OpEx is the driver named in why; not op margin itself (B2)
+P019,2,guardrails for next-year total revenue (B1)
+P020,2,gross margin drivers next year (B1)
+P021,1,"October demand/pipeline trend = driver, not revenue itself (borderline)"
+P022,2,full-year revenue guide (B1)
+P023,2,bookings = book-to-bill half of the item
+P024,2,restructuring savings to bottom line = margin itself (borderline 1/2)
+P025,0,"attach rate KPI, different quantity"
+P026,0,
+P027,1,comms segment vs total revenue (B3)
+P028,2,gross margin longer term (B1)
+P029,2,Q4 organic growth guide (B1)
+P030,1,revenue synergies = component of revenue
+P031,1,Copilot numbers named in why as context; different quantity (borderline 0/1)
+P032,1,segment margin profile (B3)
+P033,2,restocking cadence = channel inventory
+P034,1,recurring revenue component vs total guide (B3)
+P035,0,"workload mix, different quantity"
+P036,0,
+P037,2,ARR acceleration = item quantity
+P038,1,consumer segment vs total revenue (B3)
+P039,0,"pricing vs volume strategy, not op margin"
+P040,0,"optical modules ~ Communications segment vs Enterprise Data: rubric gap (segment A vs segment B), labelled 0"
+P041,2,incremental gross margin sustainability
+P042,2,sub-question on holding 55% GM floor (B5)
+P043,0,market health vs gross margin
+P044,0,capital allocation vs EPS
+P045,1,partner channel = component of growth
+P046,2,restructuring savings retained vs reinvested = op margin (why names restructuring)
+P047,0,"guidance waterfall (revenue/ARR), not gross margin"
+P048,1,"margin profile of AI credits: component, margin type unspecified"
+P049,1,Azure AI platform = component of Azure
+P050,2,combined-entity revenue growth (B1)

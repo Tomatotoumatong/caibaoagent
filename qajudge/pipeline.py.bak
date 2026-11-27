@@ -1,0 +1,210 @@
+"""Archive -> segment -> extract analyst questions -> match (system watch items vs two baselines)."""
+from __future__ import annotations
+
+import hashlib
+import json
+import sqlite3
+from typing import Dict, List, Optional
+
+from . import erdb, rubric
+from .align import align_event
+from .db import kv_get, kv_set
+from .llm import LLM
+from .roic import Archive, RoicError, load_text, should_seal, unseal
+from .segment import exchange_full, exchange_text, quote_in, segment
+
+ARMS = ("system", "prior_q", "template")
+EXTRACT_CHUNK = 12          # exchanges per extraction call
+
+
+# ----------------------------------------------------------------------
+# archive
+# ----------------------------------------------------------------------
+def archive_dev(con: sqlite3.Connection, er: sqlite3.Connection, arch: Archive, log=print) -> List[dict]:
+    """Fetch, for every dev event, its own call and the call before it (the 'prior quarter'
+    baseline). The dev event's own call is unsealed (with a ledger entry); the prior call is
+    history (released before the cutoff) in every dev case we have, otherwise it stays sealed."""
+    out = []
+    for ev in erdb.dev_events(er):
+        sym, key = ev["symbol"], ev["event_key"]
+        ident, events, attempts = arch.resolve(sym, ev.get("exchanges"))
+        cur, prior, diag = align_event(ev, events)
+        diag.update({"identifier": ident, "id_attempts": len(attempts)})
+        rec = {"event_key": key, "symbol": sym, "diag": diag, "current": None, "prior": None}
+        try:
+            if cur is not None:
+                tid = arch.fetch(sym, cur, sealed=False)
+                if tid:
+                    n = unseal(con, [tid], f"dev-set event {key} (one of the 27 already-used Q3 events)")
+                    rec["current"] = tid
+                    if n:
+                        log(f"  {key}: unsealed {tid} (dev call)")
+            if prior is not None:
+                rec["prior"] = arch.fetch(sym, prior, sealed=should_seal(prior, False))
+        except RoicError as exc:              # 402 (not in plan) etc.: record and go on
+            rec["error"] = str(exc)
+            if exc.status in (401, 403):
+                raise
+        kv_set(con, f"dev_map:{key}", rec)
+        log(f"{key}: ident={ident} align={diag.get('status')}/{diag.get('method')} "
+            f"current={rec['current']} prior={rec['prior']}")
+        out.append(rec)
+    return out
+
+
+def archive_symbols(con: sqlite3.Connection, er: Optional[sqlite3.Connection], arch: Archive, symbols: List[str],
+                    log=print) -> List[dict]:
+    """Bulk archive (e.g. the season's untouched events): the latest calls on the free plan,
+    stored sealed unless released before the cutoff. Nothing is read."""
+    out = []
+    for sym in symbols:
+        hint = erdb.company_exchanges(er, sym) if er is not None else None
+        ident, events, _ = arch.resolve(sym, hint)
+        got = []
+        for e in events:
+            try:
+                tid = arch.fetch(sym, e, sealed=should_seal(e, False))
+            except RoicError as exc:
+                if exc.status in (401, 403):
+                    raise
+                log(f"  {sym}: {exc}")
+                continue
+            if tid:
+                got.append(tid)
+        log(f"{sym}: ident={ident} transcripts={len(got)}")
+        out.append({"symbol": sym, "identifier": ident, "transcripts": got})
+    return out
+
+
+# ----------------------------------------------------------------------
+# questions
+# ----------------------------------------------------------------------
+def extract_questions(con: sqlite3.Connection, llm: LLM, tid: str, force: bool = False) -> dict:
+    text = load_text(con, tid)                     # refuses sealed transcripts
+    seg = segment(text)
+    exs = [{"idx": e.idx, "text": exchange_text(text, e)} for e in seg.exchanges]
+    if not exs:
+        return {"transcript_id": tid, "n_exchanges": 0, "n_questions": 0, "flags": seg.flags}
+    users = [rubric.extract_user(exs[i:i + EXTRACT_CHUNK]) for i in range(0, len(exs), EXTRACT_CHUNK)]
+    h = rubric.sha(rubric.EXTRACT_SYSTEM + "".join(users))
+    have = con.execute("SELECT extract_hash FROM questions WHERE transcript_id=? LIMIT 1", (tid,)).fetchone()
+    if have and have[0] == h and not force:
+        n = con.execute("SELECT COUNT(*), SUM(quote_ok) FROM questions WHERE transcript_id=?", (tid,)).fetchone()
+        return {"transcript_id": tid, "n_exchanges": len(exs), "n_questions": n[0], "n_quote_ok": n[1], "cached": True}
+    got = []
+    for user in users:                      # chunks keep each JSON answer well under max_tokens
+        got += llm.json("qa_extract", rubric.EXTRACT_SYSTEM, user, ["exchanges"]).get("exchanges") or []
+    by_idx = {e.idx: exchange_full(text, e) for e in seg.exchanges}     # quotes are checked on the full exchange
+    rows = []
+    for x in got:
+        try:
+            xi = int(x.get("x"))
+        except (TypeError, ValueError):
+            continue
+        src = by_idx.get(xi)
+        if src is None:
+            continue
+        for j, q in enumerate(x.get("questions") or []):
+            t = (q.get("text") or "").strip()
+            if not t:
+                continue
+            subj = q.get("subject") if q.get("subject") in rubric.SUBJECTS else "other"
+            rows.append((tid, f"Q{xi}.{j + 1}", xi, x.get("analyst"), x.get("firm"), t, q.get("quote"),
+                         int(quote_in(q.get("quote") or "", src)), subj, h))
+    con.execute("DELETE FROM questions WHERE transcript_id=?", (tid,))
+    con.executemany("INSERT INTO questions VALUES (?,?,?,?,?,?,?,?,?,?)", rows)
+    con.commit()
+    covered = {r[2] for r in rows}
+    return {"transcript_id": tid, "n_exchanges": len(exs), "n_questions": len(rows),
+            "n_quote_ok": sum(r[7] for r in rows), "exchanges_without_question": len(exs) - len(covered),
+            "flags": seg.flags}
+
+
+def questions(con: sqlite3.Connection, tid: str, verified_only: bool = True) -> List[dict]:
+    q = "SELECT * FROM questions WHERE transcript_id=?" + (" AND quote_ok=1" if verified_only else "")
+    rows = [dict(r) for r in con.execute(q, (tid,))]
+    rows.sort(key=lambda r: (r["exchange_idx"], int(r["qid"].split(".")[1])))
+    return rows
+
+
+# ----------------------------------------------------------------------
+# matching
+# ----------------------------------------------------------------------
+def arm_items(con: sqlite3.Connection, er: sqlite3.Connection, ev: dict, rec: dict) -> Dict[str, List[dict]]:
+    sys_items = erdb.watch_items(er, ev["event_key"])
+    k = len(sys_items)
+    arms = {"system": [{"id": w["id"], "text": w["text"]} for w in sys_items]}
+    prior = []
+    if rec.get("prior"):
+        try:
+            pq = questions(con, rec["prior"])
+        except PermissionError:
+            pq = []
+        seen = set()
+        for q in pq:                           # first K questions with distinct subjects, in call order
+            if q["subject"] in seen:
+                continue
+            seen.add(q["subject"])
+            prior.append({"id": f"P{len(prior) + 1}", "text": q["text"], "subject": q["subject"]})
+            if len(prior) == k:
+                break
+    arms["prior_q"] = prior
+    arms["template"] = rubric.template_items(ev.get("sector") or "", k)
+    return arms
+
+
+def match_event(con: sqlite3.Connection, er: sqlite3.Connection, llm: LLM, run: str, ev: dict, log=print) -> dict:
+    key = ev["event_key"]
+    rec = kv_get(con, f"dev_map:{key}") or {}
+    tid = rec.get("current")
+    if not tid:
+        return {"event_key": key, "status": "no_transcript"}
+    qs = questions(con, tid)
+    if not qs:
+        return {"event_key": key, "status": "no_questions"}
+    arms = arm_items(con, er, ev, rec)
+    try:
+        out = _match_arms(con, llm, run, key, tid, qs, arms)
+    except Exception:
+        con.rollback()                      # never leave an event half-judged
+        raise
+    log(f"{key}: q={len(qs)} " + " ".join(f"{a}={out.get(a)}" for a in ARMS))
+    return out
+
+
+def _match_arms(con, llm, run, key, tid, qs, arms) -> dict:
+    con.execute("DELETE FROM matches WHERE run=? AND event_key=?", (run, key))
+    system = rubric.match_system()
+    out = {"event_key": key, "status": "ok", "n_questions": len(qs)}
+    for arm, items in arms.items():
+        if not items:
+            out[arm] = "empty"
+            continue
+        user = rubric.match_user(items, qs)
+        ph = rubric.sha(system + user)
+        obj = llm.json("qa_match", system, user, ["items"])
+        qids = {q["qid"] for q in qs}
+        got = {str(i.get("id")): i for i in obj.get("items") or []}
+        rows = []
+        for it in items:
+            g = got.get(it["id"]) or {}
+            subj = it.get("subject") or (g.get("subject") if g.get("subject") in rubric.SUBJECTS else "other")
+            best = {}
+            for m in g.get("matches") or []:
+                q, lv = str(m.get("q")), m.get("level")
+                if q in qids and lv in (1, 2):
+                    best[q] = max(best.get(q, 0), lv)
+            if not best:
+                rows.append((run, key, arm, it["id"], it["text"], subj, None, 0, None, tid, ph))
+            for q, lv in best.items():
+                why = next((m.get("why") for m in g.get("matches") or [] if str(m.get("q")) == q), None)
+                rows.append((run, key, arm, it["id"], it["text"], subj, q, lv, why, tid, ph))
+        con.executemany("INSERT INTO matches VALUES (?,?,?,?,?,?,?,?,?,?,?)", rows)
+        out[arm] = len(items)
+    con.commit()
+    return out
+
+
+def run_id(model: str) -> str:
+    h = rubric.material_hashes()
+    return "m_" + hashlib.sha256(json.dumps([model, h], sort_keys=True).encode()).hexdigest()[:10]

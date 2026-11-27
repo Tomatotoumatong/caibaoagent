@@ -1,0 +1,175 @@
+{
+ "key": "key_m_1906647649_n50_s7.csv",
+ "gate": 0.7,
+ "min_n": 30,
+ "annotators": {
+  "human": 50,
+  "claude": 50
+ },
+ "judge_vs": {
+  "human": {
+   "n": 50,
+   "n_events": 23,
+   "kappa_hit2": 0.5349,
+   "kappa_hit2_ci95": [
+    0.2183,
+    0.8201
+   ],
+   "kappa_hit1": 0.403,
+   "kappa_weighted_3level": 0.4545,
+   "kappa_weighted_ci95": [
+    0.2872,
+    0.6304
+   ],
+   "pct_agree_3level": 0.58,
+   "prevalence_hit2": [
+    0.2,
+    0.24
+   ],
+   "confusion_rows_first_cols_second": [
+    [
+     15,
+     12,
+     3
+    ],
+    [
+     1,
+     7,
+     2
+    ],
+    [
+     0,
+     3,
+     7
+    ]
+   ],
+   "per_stratum": {
+    "pos": {
+     "n": 20,
+     "agree_hit2": 0.75
+    },
+    "near": {
+     "n": 15,
+     "agree_hit2": 0.8
+    },
+    "rand": {
+     "n": 15,
+     "agree_hit2": 1.0
+    }
+   }
+  },
+  "claude": {
+   "n": 50,
+   "n_events": 23,
+   "kappa_hit2": 0.4828,
+   "kappa_hit2_ci95": [
+    0.3072,
+    0.668
+   ],
+   "kappa_hit1": 0.4118,
+   "kappa_weighted_3level": 0.4444,
+   "kappa_weighted_ci95": [
+    0.3337,
+    0.569
+   ],
+   "pct_agree_3level": 0.58,
+   "prevalence_hit2": [
+    0.2,
+    0.44
+   ],
+   "confusion_rows_first_cols_second": [
+    [
+     14,
+     9,
+     7
+    ],
+    [
+     0,
+     5,
+     5
+    ],
+    [
+     0,
+     0,
+     10
+    ]
+   ],
+   "per_stratum": {
+    "pos": {
+     "n": 20,
+     "agree_hit2": 0.75
+    },
+    "near": {
+     "n": 15,
+     "agree_hit2": 0.5333
+    },
+    "rand": {
+     "n": 15,
+     "agree_hit2": 1.0
+    }
+   }
+  }
+ },
+ "between_annotators": {
+  "claude~human": {
+   "n": 50,
+   "n_events": 23,
+   "kappa_hit2": 0.5734,
+   "kappa_hit2_ci95": [
+    0.3721,
+    0.7561
+   ],
+   "kappa_hit1": 0.6198,
+   "kappa_weighted_3level": 0.5953,
+   "kappa_weighted_ci95": [
+    0.4532,
+    0.7021
+   ],
+   "pct_agree_3level": 0.66,
+   "prevalence_hit2": [
+    0.44,
+    0.24
+   ],
+   "confusion_rows_first_cols_second": [
+    [
+     11,
+     3,
+     0
+    ],
+    [
+     4,
+     10,
+     0
+    ],
+    [
+     1,
+     9,
+     12
+    ]
+   ],
+   "per_stratum": {
+    "pos": {
+     "n": 20,
+     "agree_hit2": 0.7
+    },
+    "near": {
+     "n": 15,
+     "agree_hit2": 0.7333
+    },
+    "rand": {
+     "n": 15,
+     "agree_hit2": 1.0
+    }
+   }
+  }
+ },
+ "reference": "human",
+ "gate_result": {
+  "reference": "human",
+  "kappa_hit2": 0.5349,
+  "n": 50,
+  "pass": false,
+  "provisional": false,
+  "reference_is_human": true
+ }
+}
